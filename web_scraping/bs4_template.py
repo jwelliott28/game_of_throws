@@ -16,7 +16,7 @@ soup = bs4.BeautifulSoup(response.text, 'html.parser')
 #Scrape the CSV file for W/R/T and QB
 
 #Right now this recognizes the table and picks it up as a bs4 result set, but does not scrape any data. Returns a length of 0.
-wrt_csv = soup.select('table #rushing_and_receiving')
+wrt_csv = soup.select('table #rushing_and_receiving > tr > td')
 print(type(wrt_csv))
 
 #qb_csv = soup.select('TO_DO: get csv table for qb attribute')
@@ -24,4 +24,4 @@ print(type(wrt_csv))
 
 #Verify the csv was correctly scraped
 print(str(wrt_csv))
-print(str(qb_csv))
+#print(str(qb_csv))
